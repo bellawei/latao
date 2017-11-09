@@ -17,7 +17,7 @@ a {
     background-color: #222d32;
 }
 
-.mt_150 {
+#mt_150 {
     margin-top: 150px;
 }
 
@@ -29,6 +29,12 @@ a {
     width: 180px;
     height: 100%;
     background-color: #222d32;
+    transition: all 0.5s;
+    position: absolute;
+    left: 0;
+    &.move{
+        left: -180px;
+    }
     .brand {
         a {
             height: 50px;
@@ -72,6 +78,10 @@ a {
             }
           }
         }
+        .child{
+            display: none;
+            padding-left: 30px ;
+        }
       }
     }
 }
@@ -79,6 +89,10 @@ a {
 .main{
   height: 100%;
   padding-left: 180px;
+  transition: all 0.5s;
+  &.move{
+    padding-left: 0;
+  }
   .topbar{
     height: 50px;
     background-color: #3c8dbc;

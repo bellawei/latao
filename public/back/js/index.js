@@ -64,7 +64,8 @@ $(function(){
                 ]
             };
             rightchart.setOption(option);
-
+ 
             
+
             
 })
