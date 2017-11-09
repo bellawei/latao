@@ -40,7 +40,7 @@ $(function () {
             message:"密码不能为空"
           },
           stringLength:{
-            min:6
+            min:6,
             max:12,
             message:"密码长度是6-12位"
           },
@@ -65,7 +65,7 @@ $(function () {
       url:"/employee/employeeLogin",
       data:$form.serialize(),
       success:function (data) {
-
+        console.log(data)
         if(data.success){
           //跳转到首页
           location.href = "index.html";
