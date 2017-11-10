@@ -24,6 +24,7 @@ $('#catergory').on('click', function () {
     $('.child').slideToggle();
 })
 
+// 模态框---退出登录
 $('#logout').on('click', function () {
     $('#logoutmodel').modal('show');
     
@@ -41,4 +42,8 @@ $('#logout').on('click', function () {
     })
 
 })
+
+
+
+
 
