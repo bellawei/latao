@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet/less" href="./css/common.less">
+    <script src="./less/less.js"></script>
+    <title>一级分类</title>
+</head>
+<body>
+    <div class="aside pull-left">
+        <div class="brand"><a href="index.html">黑马程序员</a></div>
+        <div class="userinfo">
+            <img src="./images/default.png" alt="">
+            <p>超级管理员</p>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="admin.html"><i class="glyphicon glyphicon-user"></i> 用户管理</a></li>
+                <li><a href="javascript:;" id="catergory"><i class="glyphicon glyphicon-list"></i> 分类管理</a></li>
+                <div class="child" style="display: block;">
+                    <ul>
+                        <li><a class="now" href="first.html">一级分类</a></li>
+                        <li><a href="second.html">二级分类</a></li>
+                    </ul>
+                </div>
+                <li><a href="#" > <i class="glyphicon glyphicon-tags"></i> 商品管理</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="main">
+        <div class="topbar">
+                <a href="#" class="pull-left" id="hideaside"><i class="glyphicon glyphicon-align-justify"></i></a>
+                <a href="#" class="pull-right" id="logout"><i class="glyphicon glyphicon-log-out"></i></a>
+        </div>
+        <div class="container-fluid ">
+            <ol class="breadcrumb">
+                <li><a href="admin.html">管理系统</a></li>
+                <li class="active">分类管理</li>
+                <li class="active">一级分类</li>
+            </ol>
+            <div class="contentbox">
+                <button class="btn btn-default mb_20 btn_add">添加分类</button>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td style="width:20%">序号</td>
+                            <td style="width:80%">分类名称</td>
+                        </tr>   
+                    </thead>
+                    <tbody>
+                       <!-- 模板 -->
+                    </tbody>
+                </table>
+                <div class="text-right">
+                    <ul id="paginator" class="paginator"></ul>
+                </div>
+                   
+                  </div>
+            </div>
+        </div>
+    </div>
+ 
+</body>
+<script type="text/html" id="tpl">
+    {{each rows v i}}
+    <tr><td>{{i+1+size*(page-1)}}</td><td>{{v.categoryName}}</td></tr>
+    {{/each}}
+</script>
+</html>
+<script src="./assets/jquery/jquery.min.js"></script>
+<script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="./assets/artTemplate/template-web.js"></script>
+<script src="./assets/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+
+<script src="./js/common.js"></script>
+<script src="./js/first.js"></script>
