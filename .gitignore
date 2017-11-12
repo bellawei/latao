@@ -30,7 +30,13 @@ build/Release
 node_modules
 jspm_packages
 .idea
+<<<<<<< HEAD
 public/04-code
+=======
+.gitignore
+key
+
+>>>>>>> category
 
 # Optional npm cache directory
 .npm
