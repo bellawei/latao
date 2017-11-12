@@ -2,6 +2,7 @@ $(function(){
     var currentPage=1;
     var pageSize=5;
 
+    //-------------------- 分页功能--------------------------
     function render(){
         $.ajax({
             type:'get',
@@ -29,12 +30,15 @@ $(function(){
     }
     render();
 
+
+
     $('.contentbox button').on('click',function(){
         $('#addcategory').modal('show');
     })
 
+    // --------------------------表单验证-----------------------
     var $form=$('form');
-    console.log($form);
+
     $form.bootstrapValidator({
         feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
@@ -60,7 +64,6 @@ $(function(){
             url:'/category/addTopCategory',
             data:$form.serialize(),
             success:function(data){
-                console.log(data);
                 if(data.success){
                     $("#addcategory").modal("hide");
                     currentPage = 1;
@@ -73,6 +76,10 @@ $(function(){
         })
     })
 
+    $('.cancel').on('click',function(){
+        $form.data("bootstrapValidator").resetForm();
+        $form[0].reset();
+    })
 
 
 
