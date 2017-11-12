@@ -6,6 +6,7 @@ if ((location.href).indexOf('login.html') == -1) {
         url: '/employee/checkRootLogin',
         type: 'get',
         success: function (data) {
+            console.log(data);
             if (data.error == 400) {
                 location.href = 'login.html'
             }
