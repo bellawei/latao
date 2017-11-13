@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,9 @@
     <link rel="stylesheet" href="./assets/bootstrap-validator/css/bootstrapValidator.min.css">
     <link rel="stylesheet/less" href="./css/common.less">
     <script src="./less/less.js"></script>
-    <title>一级分类</title>
+    <title>二级分类</title>
 </head>
+
 <body>
     <div class="aside pull-left">
         <div class="brand"><a href="index.html">黑马程序员</a></div>
@@ -23,18 +25,18 @@
                 <li><a href="javascript:;" id="catergory"><i class="glyphicon glyphicon-list"></i> 分类管理</a></li>
                 <div class="child" style="display: block;">
                     <ul>
-                        <li><a  href="first.html">一级分类</a></li>
+                        <li><a href="first.html">一级分类</a></li>
                         <li><a class="now" href="second.html">二级分类</a></li>
                     </ul>
                 </div>
-                <li><a href="product.html" > <i class="glyphicon glyphicon-tags"></i> 商品管理</a></li>
+                <li><a href="product.html"> <i class="glyphicon glyphicon-tags"></i> 商品管理</a></li>
             </ul>
         </div>
     </div>
     <div class="main">
         <div class="topbar">
-                <a href="#" class="pull-left" id="hideaside"><i class="glyphicon glyphicon-align-justify"></i></a>
-                <a href="#" class="pull-right" id="logout"><i class="glyphicon glyphicon-log-out"></i></a>
+            <a href="#" class="pull-left" id="hideaside"><i class="glyphicon glyphicon-align-justify"></i></a>
+            <a href="#" class="pull-right" id="logout"><i class="glyphicon glyphicon-log-out"></i></a>
         </div>
         <div class="container-fluid ">
             <ol class="breadcrumb">
@@ -46,31 +48,52 @@
                 <button class="btn btn-default mb_20 btn_add">添加分类</button>
 
                 <!-- 模态框 -->
-             <div class="modal fade" id="addcategory">
-                <div class="modal-dialog modal-sm">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title">添加分类</h4>
-                    </div>
-                    <div class="modal-body">
+                <div class="modal fade" id="addcategory">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">添加二级分类</h4>
+                            </div>
+                            <div class="modal-body">
 
-                            <form id="form">
+                                <form id="form">
+                                    <div class="form-group">
+                                        <div class="dropdown">
+                                            <div class="dropdown">
+                                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                                                    <span id="choosed">请选择一级分类</span>
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                    <li><a href="#">运动鞋</a></li>
+                                                    <li><a href="#">滑板鞋</a></li>
+                                                    <!-- 挖坑 tpl2 -->
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="categoryName" placeholder="请输入一级分类">
                                     </div>
-                            </form>
+                                    <div class="form-group boxupload">
+                                        <button class="btn btn-default btn-md" >上传图片</button>
+                                        <input name="pic1" type="file" class="fileupload" id="fileupload" data-url="/category/addSecondCategoryPic">
+                                    </div>
+                                    <div class="form-group">
+                                        <img src="./images/none.png" alt="" width="100" height="100">
+                                    </div>
+                                </form>
 
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" form="form" class="btn btn-default cancel" data-dismiss="modal">取消</button>
+                                <button type="submit" form="form" class="btn btn-primary" id="confirmlogout">确定</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                      <button type="button" form="form" class="btn btn-default cancel" data-dismiss="modal">取消</button>
-                      <button type="submit" form="form" class="btn btn-primary" id="confirmlogout">确定</button>
-                    </div>
-                  </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-              </div><!-- /.modal -->
-
-                   <!-- 模态框 -->
+                </div>
+                <!-- 模态框结束 -->
 
                 <table class="table table-bordered">
                     <thead>
@@ -79,29 +102,53 @@
                             <td style="width:30%">一级分类名称</td>
                             <td style="width:30%">二级分类名称</td>
                             <td style="width:30%">二级分类LOGO</td>
-                        </tr>   
+                        </tr>
                     </thead>
                     <tbody>
-                       <!-- 模板 -->
+                        <!-- 模板 -->
+                        <tr>
+                            <td>1</td>
+                            <td>运动鞋</td>
+                            <td>耐克</td>
+                            <td><img src="./images/none.png" alt=""></td>
+                        </tr>
                     </tbody>
                 </table>
                 <div class="text-right">
                     <ul id="paginator" class="paginator"></ul>
                 </div>
-                   
-                  </div>
+
             </div>
         </div>
     </div>
+    </div>
 </body>
+
+
 <script type="text/html" id="tpl">
-   
+    {{each rows v i}}
+    <tr>
+        <td>{{(page-1)*size+i}}</td>
+        <td>{{v.categoryName}}</td>
+        <td>{{v.brandName}}</td>
+        <td><img src="{{v.brandLogo}}" alt=""></td>
+    </tr>
+    {{/each}}
 </script>
+<script type="text/html" id="tpl2">
+    {{each rows v i}}
+    <li><a href="#">{{v.categoryName}}</a></li>
+    {{/each}}
+</script>
+
 </html>
 <script src="./assets/jquery/jquery.min.js"></script>
 <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="./assets/bootstrap-validator/js/bootstrapValidator.min.js"></script>
-<script src="./assets/artTemplate/template-web.js"></script>
 <script src="./assets/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<script src="./assets/artTemplate/template-web.js"></script>
+<script src="./assets/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="./assets/jquery-fileupload/jquery.fileupload.js"></script>
+
 <script src="./js/common.js"></script>
-<script src="./js/first.js"></script>
+<script src="./js/second.js"></script>
