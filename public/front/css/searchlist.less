@@ -1,0 +1,48 @@
+.searchbar{
+    padding: 10px;
+    width: 100%;
+    position: relative;
+    button{
+        position: absolute;
+        right:10px;
+        top: 10px;
+        border-radius: 0 5px 5px 0;
+       
+    }
+    input{
+        height: 33px;
+        border-radius: 5px;
+        font-size: 12px;
+        border-color: #007aff;
+        margin: 0;
+    }
+}
+.lt_history{
+    padding:10px;
+    .title{
+        height: 24px;
+        font-size: 12px;
+        span{
+            line-height: 24px;
+            color: #666;
+        }
+    }
+    .historylist{
+        ul{
+            border: 1px dashed #ccc;
+            li{
+                height: 30px;
+                line-height: 30px;
+                border-bottom: 1px dashed #ccc;
+                padding: 0 10px 0;  
+                font-size: 12px;
+                span{
+                    line-height: 30px;
+                }
+                &:last-child{
+                    border-bottom:0;
+                }
+            }
+        }
+    }
+}
