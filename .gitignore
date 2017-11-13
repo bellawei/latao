@@ -33,7 +33,6 @@ jspm_packages
 public/key
 .gitignore
 
-
 # Optional npm cache directory
 .npm
 
