@@ -64,13 +64,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="cart.html">
                         <span class="fa fa-shopping-cart"></span>
                         <p>购物车</p>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="menber.html">
                         <span class="fa fa-user"></span>
                         <p>会员中心</p>
                     </a>
@@ -81,12 +81,12 @@
     <script type="text/html" id="tpl">
         {{each data v i}}
         <li>
-            <a href="#">
+            <a href="javascript:;" data-id="{{v.id}}">
                     <img src="{{v.pic[0].picAddr}}" alt="">
                     <p class="mui-ellipsis-2">{{v.proName}}</p>
                     <p><span>&yen;{{v.price}}</span> <del>&yen;{{v.oldPrice}}</del> </p>
-                    <button class="mui-btn-blue">立即购买</button>
-                </a>
+                    <button class="mui-btn-blue buy">立即购买</button>
+            </a>
         </li>
         {{/each}}
     </script>

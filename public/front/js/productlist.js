@@ -22,7 +22,8 @@ function render(){
         url:'/product/queryProduct',
         data:obj,
         success:function(data){
-            $('.product ul').html(template('tpl',data))
+            $('.product ul').html(template('tpl',data));
+            console.log(data);
         }
     })
 }
@@ -49,4 +50,12 @@ $('.searchbar button').on('click',function(){
     // }
     
     render();
+})
+
+
+$('.product').on('click','a',function(){
+    var productId=$(this).data('id');
+    console.log(productId);
+    location.href='details.html?productId='+productId;
+ 
 })
