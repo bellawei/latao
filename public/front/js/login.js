@@ -30,6 +30,10 @@ $('.confirm').on('click',function(e){
             if(data.error==403){
                 mui.toast(data.message)
             }
+            if(!key||key.indexOf('login')!=-1){
+                location.href='index.html';
+                }
+            
             if(key.indexOf('register')!=-1){
                 location.href='menber.html'
             }

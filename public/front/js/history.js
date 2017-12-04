@@ -1,13 +1,13 @@
 
-
-
-    var historyArr=[];
+var historyArr=[];
 function render(){
-    historyArr=JSON.parse(localStorage.getItem('lt_search_history'))||'[]'; 
+    historyArr=JSON.parse(localStorage.getItem('lt_search_history')||'[]'); 
+    console.log(historyArr);
     var html=template('tpl',{arr:historyArr});
     $('.lt_history').html(template('tpl',{arr:historyArr}))
 }
 render();
+
 
 
 
@@ -28,7 +28,6 @@ $('.lt_body').on('click','.fa-close',function(){
 })  
 
 
-
 // -----------添加------------
 $('.search_btn').on('click',function(){
     var newhistory=$('.searchbar input').val().trim();
@@ -40,12 +39,16 @@ $('.search_btn').on('click',function(){
     if(historyArr.length>10){
      historyArr.pop();
     }
+
+
     localStorage.setItem('lt_search_history',JSON.stringify(historyArr));
  
     render();
     $('.searchbar input').val('');
     location.href='productlist.html?key='+newhistory;
  })
+
+
  
  //点击记录  跳转
  $('.lt_history').on('click','.historylist a',function(){

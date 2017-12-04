@@ -1,6 +1,6 @@
 var key=window.location.search;
 var proName=key.split('=')[1];
-
+console.log(proName);
 var page=1;
 var pageSize=1000;
 
@@ -14,6 +14,7 @@ function render(){
         pageSize:pageSize,
         proName:proName
     }
+    console.log(obj);
     if(key){
         obj[key]=value;
     }

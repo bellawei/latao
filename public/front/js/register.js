@@ -1,6 +1,4 @@
 
-checklogin();
-
 
 var vCode='';
 

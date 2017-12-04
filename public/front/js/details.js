@@ -8,7 +8,8 @@ $.ajax({
     },
     success: function (data) {
         console.log(data);
-        $('.mui-scroll').html(template('tpl', data))
+        $('.mui-scroll').html(template('tpl', data));
+        mui(".mui-numbox").numbox();
     }
 })
 
@@ -45,3 +46,4 @@ $('.btn_add_cart').on('click', function () {
 
     })
 })
+
