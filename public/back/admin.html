@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,48 +10,107 @@
     <script src="./less/less.js"></script>
     <title>首页</title>
 </head>
+
 <body>
     <div class="aside pull-left">
-        <div class="brand"><a href="index.html">黑马程序员</a></div>
+        <div class="brand">
+            <a href="index.html">黑马程序员</a>
+        </div>
         <div class="userinfo">
             <img src="./images/default.png" alt="">
             <p>超级管理员</p>
         </div>
         <div class="nav">
             <ul>
-                <li><a href="admin.html" class="now"><i class="glyphicon glyphicon-user"></i> 用户管理</a></li>
-                <li><a href="javascript:;" id="catergory"><i class="glyphicon glyphicon-list"></i> 分类管理</a></li>
+                <li>
+                    <a href="admin.html" class="now">
+                        <i class="glyphicon glyphicon-user"></i> 用户管理</a>
+                </li>
+                <li>
+                    <a href="javascript:;" id="catergory">
+                        <i class="glyphicon glyphicon-list"></i> 分类管理</a>
+                </li>
                 <div class="child">
                     <ul>
-                        <li><a href="first.html">一级分类</a></li>
-                        <li><a href="second.html">二级分类</a></li>
+                        <li>
+                            <a href="first.html">一级分类</a>
+                        </li>
+                        <li>
+                            <a href="second.html">二级分类</a>
+                        </li>
                     </ul>
                 </div>
-                <li><a href="product.html"> <i class="glyphicon glyphicon-tags"></i> 商品管理</a></li>
+                <li>
+                    <a href="product.html">
+                        <i class="glyphicon glyphicon-tags"></i> 商品管理</a>
+                </li>
             </ul>
         </div>
     </div>
- 
+
     <div class="main">
-            <div class="topbar">
-                <a href="#" class="pull-left" id="hideaside"><i class="glyphicon glyphicon-align-justify"></i></a>
-                <a href="#" class="pull-right" id="logout"><i class="glyphicon glyphicon-log-out"></i></a>
-            </div>
-            <div class="container-fluid ">
-                    <ol class="breadcrumb">
-                            <li><a href="#">管理系统</a></li>
-                            <li class="active">首页</li>
-                    </ol>
-                    <div id="left-chart" style="width: 45%;height:400px;" class="pull-left"></div>
-                    <div id="right-chart" style="width:45%;height:400px;" class="pull-right"></div>
-            </div>
-            
-    
+        <div class="topbar">
+            <a href="#" class="pull-left" id="hideaside">
+                <i class="glyphicon glyphicon-align-justify"></i>
+            </a>
+            <a href="#" class="pull-right" id="logout">
+                <i class="glyphicon glyphicon-log-out"></i>
+            </a>
         </div>
+        <div class="container-fluid ">
+            <ol class="breadcrumb">
+                <li>
+                    <a href="#">管理系统</a>
+                </li>
+                <li class="active">用户管理</li>
+            </ol>
+
+            <div class="lt_content">
+                <table>
+                    <thead>
+                        <tr>
+                            <td width="10%">序号</td>
+                            <td width="30%">用户名</td>
+                            <td width="30%">手机号</td>
+                            <td width="20%">状态</td>
+                            <td width="10%">操作</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <!-- 挖个坑 -->
+                      
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+
+    </div>
+    <script type="text/html" id="tpluser">
+        {{each rows v i}}
+        <tr>
+            <td>{{i+1}}</td>
+            <td>{{v.username}}</td>
+            <td>{{v.mobile}}</td>
+            <td>{{v.isDelete==1?'正常':'禁用'}}</td>
+            <td data-id="{{v.id}}">
+                {{if v.isDelete === 1}}
+                <button class="btn btn-danger btn-sm disable">禁用</button>
+                {{/if}}
+                {{if v.isDelete === 0}}
+                <button class="btn btn-success btn-sm enable">启用</button>
+                {{/if}}
+              </td>
+        </tr>
+        {{/each}}
+    </script>
+
 </body>
-</html>
 <script src="./assets/jquery/jquery.min.js"></script>
 <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
-
+<script src="./assets/artTemplate/template-web.js"></script>
 <script src="./js/common.js"></script>
 <script src="./js/admin.js"></script>
+</html>
