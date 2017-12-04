@@ -56,7 +56,6 @@
                                 <h4 class="modal-title">添加二级分类</h4>
                             </div>
                             <div class="modal-body">
-
                                 <form id="form">
                                     <div class="form-group">
                                         <div class="dropdown">
@@ -74,7 +73,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="categoryName" placeholder="请输入一级分类">
+                                        <input type="text" class="form-control" name="categoryName" placeholder="请输入二级分类">
                                     </div>
                                     <div class="form-group boxupload">
                                         <button class="btn btn-default btn-md" >上传图片</button>
@@ -128,7 +127,7 @@
 <script type="text/html" id="tpl">
     {{each rows v i}}
     <tr>
-        <td>{{(page-1)*size+i}}</td>
+        <td>{{(page-1)*size+i+1}}</td>
         <td>{{v.categoryName}}</td>
         <td>{{v.brandName}}</td>
         <td><img src="{{v.brandLogo}}" alt=""></td>

@@ -2,7 +2,8 @@
 SQLyog Ultimate v12.09 (64 bit)
 MySQL - 5.5.20-log : Database - letao
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 
@@ -34,7 +35,7 @@ CREATE TABLE `address` (
 
 /*Data for the table `address` */
 
-insert  into `address`(`id`,`userId`,`address`,`addressDetail`,`isDelete`,`recipients`,`postCode`,`mobile`) values (1,1,'山西省太原市小店区','解放东路传智播客科技集团14层1402室',1,'周双大','111112',NULL);
+insert  into `address`(`id`,`userId`,`address`,`addressDetail`,`isDelete`,`recipients`,`postCode`,`mobile`) values (1,1,'广东省深圳市','xx区xx街道xxx小区xx号',1,'陈xx','111112',NULL);
 
 /*Table structure for table `brand` */
 
